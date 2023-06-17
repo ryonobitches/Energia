@@ -2,6 +2,10 @@
   font-family: 'Inter',sans-serif;
 }
 
+body {
+  background: white;
+}
+
 .header {
   display: grid;
   justify-content: center;
@@ -19,7 +23,7 @@
   display: block;
   width: 100%;
   height: 6px;
-  background: linear-gradient(to right, red,blue);
+  background: linear-gradient(to right, #FFD700, #FFA500,#FF0000,#FF60B4);
   animation: afterH1 5s infinite;
   border-radius: 8px;
 }
@@ -30,29 +34,50 @@
   color: rgb(141, 141, 141);
 }
 
-#containerBTN button{
-  display: grid;
-  background: rgb(195, 0, 255);
-  border-radius: 8px;
-  height: 10vh;
-  width: 220px;
+
+
+.btn{
+  display: flex;
+  height: 70px;
+  width: 200px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  justify-content: center;
   align-items: center;
-  font-size: 25px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.5s;
-  box-shadow: 1px 1px 10px rgb(158, 2, 255);
-}
-
-#containerBTN button a{
-  color: aliceblue;
+  font-weight: 800;
   text-decoration: none;
-  font-weight: 700;
+  text-transform: uppercase;
+  color: black;
+  position: relative;
+  transition: all 0.5s;
+  padding: 20px;
+  margin: 0px 15px;
 }
 
-#containerBTN button:hover {
+
+.btn::before{
+  position: absolute;
+  content: '';
+  height: 0%;
+  width: 100%;
+  background: linear-gradient(to right, #FFD700, #FFA500,#FF0000,#FF60B4);
+  left: 0;
+  opacity: 0;
+  display: block;
+  z-index: -1;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.btn:hover::before{
+  height: 100%;
+  opacity: 1;
+}
+
+.btn:hover{
+  color: white;
+  box-shadow: 1px 1px 50px rgba(247, 0, 255, 0.507);
   scale: 1.05;
-  background: rgb(213, 73, 255);
 }
 
 #containerBTN{
@@ -61,6 +86,8 @@
   gap: 40px;
   justify-content: center;
 }
+
+
 @keyframes afterH1{
   0%{
     opacity: 0;
@@ -69,7 +96,7 @@
   50%{
     width: 100%;
     opacity: 1;
-    box-shadow: 1px 1px 20px purple;
+    box-shadow: 1px 1px 10px rgb(255, 0, 0);
   }
   100%{
     opacity: 0;
