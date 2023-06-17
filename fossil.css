@@ -5,6 +5,14 @@
 .container {
   display: grid;
   justify-content: center;
+  align-items: center;
+}
+
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
@@ -15,5 +23,11 @@ h1::after{
   display: block;
   height: 3px;
   width: 100%;
-  background: linear-gradient(to right, red ,blue);
+  background: linear-gradient(to right, #FFD700, #FFA500,#FF0000,#FF60B4);
+}
+
+.back{
+  display: grid;
+  justify-content: center;
+  margin-top: 100px;
 }
